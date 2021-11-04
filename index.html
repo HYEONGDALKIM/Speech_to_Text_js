@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+ 
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href= "./theme.css" />
+</head>
+
+<body>
+    
+    <div id="result"></div>
+    <button onClick="startConverting();" type="button"><i class="fa fa-microphone"></i></button>
+    <hr>
+
+    
+    <form  method=get action="http://www.google.co.kr/search" target="_blank" > 
+        <input type=text name=q size=20 maxlength=255 placeholder="Google 검색" 
+               onfocus="this.placeholder=''" onblur="this.placeholder='Google 검색'"
+               value="" /> <!-- 구글 검색 입력 창 -->    
+            <button class = "img-button" type = "submit" name = "click" value = "">
+                 <i class="fa fa-search"></i>
+            </button>   
+    
+    </form>
+    
+    <script src = "./Speech_to_Text.js"></script>
+</body>
+
