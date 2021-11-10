@@ -40,4 +40,6 @@ function startConverting()
             r.innerHTML ="your browser is not supported. If google chrome. Please upgrade!";
         }
 }
+
+
 startConverting();
