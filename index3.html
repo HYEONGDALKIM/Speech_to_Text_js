@@ -19,11 +19,18 @@
               </button>   
             <button onClick="startConverting();" type="button"><i class="fa fa-microphone"></i></button>
 
-            <div id = "result">
-                <input type="text" name="user_id" id="result" maxlength="20" placeholder="음성인식 입력창" />
-            </div>
+            <span id = "result">
+           
+                <input type="text" name="user_id" id="result" maxlength="20" placeholder="음성인식테스트창." />
+            </span>
     </form>
 
+
+    <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
+        <span id="final" class="text-light"></span>
+        <span id="interim" class="text-secondary"></span>
+      </div>
+  
     <script src = "./Speech_to_Text.js"></script>
 </body>
 

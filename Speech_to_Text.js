@@ -2,18 +2,17 @@ var r=document.getElementById('result');
 
 function startConverting()
 {
-        //check this browser is chrome or not. because this application supported only in chrome browser
  
         if('webkitSpeechRecognition'in window){ //Web speech API Function
-            var speechRecognizer = new webkitSpeechRecognition(); //continuous : you will catch mic only one time or not
-            speechRecognizer.continuous = true; //interimResults : during capturing the mic you will send results or not
-            speechRecognizer.interimResults = true;//lang : language (ko-KR : Korean, en-IN : englist)
-            speechRecognizer.lang="ko-IN";//start!
-            speechRecognizer.start();
+            var speechRecognizer = new webkitSpeechRecognition(); 
+            speechRecognizer.continuous = true; // 마이크 캡처동안 결과 보내지않음 
+            speechRecognizer.interimResults = true;
+            speechRecognizer.lang="ko-KR"; //언어
+            speechRecognizer.start(); // 시작
  
             var finalTranscripts = '';
  
-            //if the voice catched onresult function will start
+            // 음성 캐치기능이 시작될 때 
             speechRecognizer.onresult=function(event){
                 var interimTranscripts='';
                 for(var i=event.resultIndex; i < event.results.length; i++)
@@ -32,7 +31,11 @@ function startConverting()
                 //insert into HTML
                 r.innerHTML=finalTranscripts+'<span style="color:#999">'+interimTranscripts+'</span>';
             };
+
+
+            // 오류 발생
             speechRecognizer.onerror = function(event){
+                document.querySelector("#status").style.display = "none";
             };
         }
         else{
